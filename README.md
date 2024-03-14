@@ -1,8 +1,8 @@
 ###  DATE: 
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: Mohammedd Nafeez Kamal S
+###  ROLL NO :212221040106
+###  DEPARTMENT: CSE
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -47,9 +47,8 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
  
 
-
+![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
  
-
 
 
 
@@ -57,9 +56,11 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 CIRCUIT DIAGRAM
  
  
- ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
-
+ 
 ### FIGURE 04 CIRCUIT DIAGRAM
+
+![Screenshot 2024-03-14 113544](https://github.com/Nafeezkamal123/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/128898953/25434d8e-ce34-45ae-aa6b-f7a6a9653a99)
+
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -76,7 +77,44 @@ CIRCUIT DIAGRAM
 ### PROGRAM :
  
 
+#include <Servo.h>
+Servo s1;
+int pos = 0;
 
+void setup()
+{
+  s1.attach(9);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+ for (pos=0;pos<=180;pos+=1)
+  {
+   s1.write(pos);
+   delay(20);
+   //Serial.print("Angle=");
+   Serial.println(pos);
+   		
+ }
+  
+  for (pos=180;pos>=0;pos-=1)
+  {
+   s1.write(pos);
+   delay(20);
+   //Serial.print("Angle=");
+   Serial.println(pos);
+   		
+ }
+}
+
+
+### SCHEMATIC DIAGRAM:
+
+![Screenshot 2024-03-14 113310](https://github.com/Nafeezkamal123/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/128898953/af9435be-dc43-4fd6-9149-23f524f51e5b)
+
+### SERIAL MONITOR:
+![Screenshot 2024-03-14 113945](https://github.com/Nafeezkamal123/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/128898953/fd8cd21a-cf2d-4b66-8859-ff172accc172)
 
 
 
